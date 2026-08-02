@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://danp2ygm14yb3"]
+
+[ext_resource type="Script" uid="uid://1m0cho1ik37r" path="res://player.gd" id="1_f3sb7"]
+[ext_resource type="MeshLibrary" uid="uid://h26aa4fjchxo" path="res://blocks.tres" id="2_tlwt5"]
+[ext_resource type="Script" uid="uid://b24r3guholqt6" path="res://grid_map.gd" id="3_aqk2v"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_6654v"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_6654v"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_6654v"]
+
+[node name="World" type="Node3D" unique_id=135381070]
+
+[node name="player" type="CharacterBody3D" parent="." unique_id=741675535]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 9.469121, -0.17607021, 0)
+script = ExtResource("1_f3sb7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="player" unique_id=1550169265]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2638109, 0)
+shape = SubResource("CapsuleShape3D_6654v")
+
+[node name="Head" type="Node3D" parent="player" unique_id=74813978]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7992179, 0)
+
+[node name="Camera3D" type="Camera3D" parent="player/Head" unique_id=2083185348]
+
+[node name="ground" type="StaticBody3D" parent="." unique_id=340396216]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="ground" unique_id=995453192]
+transform = Transform3D(10, 0, 0, 0, 0.01, 0, 0, 0, 10, 0, -0.01, 0)
+mesh = SubResource("PlaneMesh_6654v")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ground" unique_id=1566544911]
+shape = SubResource("WorldBoundaryShape3D_6654v")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1594382616]
+transform = Transform3D(1, 0, 0, 0, -0.010765682, 0.99994206, 0, -0.99994206, -0.010765682, 0, 17.70362, 0)
+
+[node name="GridMap" type="GridMap" parent="." unique_id=1276906098]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 0, -7.5)
+mesh_library = ExtResource("2_tlwt5")
+cell_size = Vector3(1, 1, 1)
+script = ExtResource("3_aqk2v")
+metadata/_editor_floor_ = Vector3(0, -2, 0)
