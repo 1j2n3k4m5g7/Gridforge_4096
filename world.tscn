@@ -58,6 +58,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 120.0
 offset_bottom = 40.0
+scale = Vector2(0.75, 0.75)
 mouse_filter = 2
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer/FPSOverlay" unique_id=208088665]
@@ -88,6 +89,7 @@ offset_right = 21.0
 offset_bottom = 21.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.75, 0.75)
 mouse_filter = 2
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/Crosshair" unique_id=62089756]
