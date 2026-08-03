@@ -44,7 +44,7 @@ repository and stating if any changes were made to the code.
 --------------------------------------------------------------------------------
 This project utilizes the following third-party components under their 
 respective licenses:
-- Godot Engine (Permisive MIT License [notice](/Godot/LICENSE.md))
+- Godot Engine (Permissive MIT License [notice](/Godot/LICENSE.md))
 
 --------------------------------------------------------------------------------
 6. DISCLAIMER
