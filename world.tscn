@@ -3,12 +3,19 @@
 [ext_resource type="Script" uid="uid://1m0cho1ik37r" path="res://player.gd" id="1_f3sb7"]
 [ext_resource type="MeshLibrary" uid="uid://h26aa4fjchxo" path="res://blocks.tres" id="2_tlwt5"]
 [ext_resource type="Script" uid="uid://b24r3guholqt6" path="res://grid_map.gd" id="3_aqk2v"]
+[ext_resource type="Script" uid="uid://ncja6aku616l" path="res://fps_disp.gd" id="4_aqk2v"]
+[ext_resource type="Texture2D" uid="uid://b4hl5nau8qpc2" path="res://customTextures/crosshair1.png" id="5_036b0"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_6654v"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_6654v"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_6654v"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_6654v"]
+font_size = 29
+outline_size = 4
+outline_color = Color(0.039730992, 0.039730992, 0.039730977, 1)
 
 [node name="World" type="Node3D" unique_id=135381070]
 
@@ -43,3 +50,48 @@ mesh_library = ExtResource("2_tlwt5")
 cell_size = Vector3(1, 1, 1)
 script = ExtResource("3_aqk2v")
 metadata/_editor_floor_ = Vector3(0, -2, 0)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1720459757]
+
+[node name="FPSOverlay" type="Control" parent="CanvasLayer" unique_id=1385674715]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 120.0
+offset_bottom = 40.0
+mouse_filter = 2
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/FPSOverlay" unique_id=208088665]
+layout_mode = 0
+offset_right = 120.0
+offset_bottom = 40.0
+color = Color(1, 1, 1, 0.5)
+
+[node name="Label" type="Label" parent="CanvasLayer/FPSOverlay/ColorRect" unique_id=41453582]
+layout_mode = 0
+offset_right = 120.0
+offset_bottom = 40.0
+label_settings = SubResource("LabelSettings_6654v")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("4_aqk2v")
+
+[node name="Crosshair" type="Control" parent="CanvasLayer" unique_id=1084100815]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 21.0
+offset_bottom = 21.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Crosshair" unique_id=62089756]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("5_036b0")
