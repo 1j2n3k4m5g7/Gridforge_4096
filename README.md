@@ -39,3 +39,5 @@ This project is licensed under the **PolyForm Noncommercial License 1.0.0** with
 
 ### 📧 Commercial Inquiries
 If you want to use this project in a commercial product, please contact: **1j2n3k4m5g7dev@gmail.com**
+
+#### [full text](/LICENSE.md)
