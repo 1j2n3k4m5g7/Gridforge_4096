@@ -23,6 +23,10 @@ func _unhandled_input(event: InputEvent) -> void:
 			_sculpt(false) # Destroy block
 		elif event.button_index == MOUSE_BUTTON_RIGHT:
 			_sculpt(true)  # Place block
+	if event.is_action_pressed("break_block"):
+		_sculpt(false) # Destroy block
+	elif event.is_action_pressed("place_block"):
+		_sculpt(true)  # Place block
 
 func _sculpt(is_placing: bool) -> void:
 	var space_state = get_world_3d().direct_space_state

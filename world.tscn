@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://b24r3guholqt6" path="res://grid_map.gd" id="3_aqk2v"]
 [ext_resource type="Script" uid="uid://ncja6aku616l" path="res://fps_disp.gd" id="4_aqk2v"]
 [ext_resource type="Texture2D" uid="uid://b4hl5nau8qpc2" path="res://customTextures/crosshair1.png" id="5_036b0"]
+[ext_resource type="Script" uid="uid://fe4xxp5pq74h" path="res://touch_ui.gd" id="6_dwbse"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_6654v"]
 
@@ -33,6 +34,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7992179, 0)
 [node name="Camera3D" type="Camera3D" parent="player/Head" unique_id=2083185348]
 
 [node name="ground" type="StaticBody3D" parent="." unique_id=340396216]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="ground" unique_id=995453192]
 transform = Transform3D(10, 0, 0, 0, 0.01, 0, 0, 0, 10, 0, -0.01, 0)
@@ -97,3 +99,101 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("5_036b0")
+
+[node name="TouchControl" type="CanvasLayer" parent="." unique_id=226806713]
+
+[node name="TouchUI" type="Control" parent="TouchControl" unique_id=1621651446]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("6_dwbse")
+
+[node name="RMB" type="Button" parent="TouchControl/TouchUI" unique_id=887431549]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -100.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "place"
+
+[node name="LMB" type="Button" parent="TouchControl/TouchUI" unique_id=215633819]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -210.0
+offset_top = -210.0
+offset_right = -110.0
+offset_bottom = -110.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "break"
+
+[node name="W" type="Button" parent="TouchControl/TouchUI" unique_id=1285010555]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 110.0
+offset_top = -320.0
+offset_right = 210.0
+offset_bottom = -220.0
+grow_vertical = 0
+text = "△"
+
+[node name="S" type="Button" parent="TouchControl/TouchUI" unique_id=1022818325]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 110.0
+offset_top = -100.0
+offset_right = 210.0
+grow_vertical = 0
+text = "▽"
+
+[node name="A" type="Button" parent="TouchControl/TouchUI" unique_id=555504160]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -210.0
+offset_right = 100.0
+offset_bottom = -110.0
+grow_vertical = 0
+text = "◁"
+
+[node name="D" type="Button" parent="TouchControl/TouchUI" unique_id=784871239]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 220.0
+offset_top = -210.0
+offset_right = 320.0
+offset_bottom = -110.0
+grow_vertical = 0
+text = "▷"
+
+[node name="SPACE" type="Button" parent="TouchControl/TouchUI" unique_id=811332932]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 110.0
+offset_top = -210.0
+offset_right = 210.0
+offset_bottom = -110.0
+grow_vertical = 0
+text = "jump"
