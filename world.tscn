@@ -1,11 +1,12 @@
 [gd_scene format=3 uid="uid://danp2ygm14yb3"]
 
 [ext_resource type="Script" uid="uid://1m0cho1ik37r" path="res://player.gd" id="1_f3sb7"]
-[ext_resource type="MeshLibrary" uid="uid://h26aa4fjchxo" path="res://blocks.tres" id="2_tlwt5"]
+[ext_resource type="MeshLibrary" uid="uid://h26aa4fjchxo" path="res://customTextures/blocks.tres" id="2_tlwt5"]
 [ext_resource type="Script" uid="uid://b24r3guholqt6" path="res://grid_map.gd" id="3_aqk2v"]
 [ext_resource type="Script" uid="uid://ncja6aku616l" path="res://fps_disp.gd" id="4_aqk2v"]
 [ext_resource type="Texture2D" uid="uid://b4hl5nau8qpc2" path="res://customTextures/crosshair1.png" id="5_036b0"]
 [ext_resource type="Script" uid="uid://fe4xxp5pq74h" path="res://touch_ui.gd" id="6_dwbse"]
+[ext_resource type="Sky" uid="uid://n7eb383nrotl" path="res://customTextures/sky1.tres" id="7_pkg7o"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_6654v"]
 
@@ -17,6 +18,10 @@
 font_size = 29
 outline_size = 4
 outline_color = Color(0.039730992, 0.039730992, 0.039730977, 1)
+
+[sub_resource type="Environment" id="Environment_6654v"]
+background_mode = 2
+sky = ExtResource("7_pkg7o")
 
 [node name="World" type="Node3D" unique_id=135381070]
 
@@ -197,3 +202,6 @@ offset_right = 210.0
 offset_bottom = -110.0
 grow_vertical = 0
 text = "jump"
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=893175664]
+environment = SubResource("Environment_6654v")

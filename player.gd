@@ -4,9 +4,9 @@ const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 @export var mouse_sensitivity: float = 0.003
 
-# Make sure you have a Node3D named 'Head' as a child of your CharacterBody3D,
-# and your Camera3D as a child of that 'Head'.
 @onready var head: Node3D = $Head
+
+var working: bool = true
 
 func _ready() -> void:
 	# Capture mouse on start
@@ -27,6 +27,8 @@ func _unhandled_input(event: InputEvent) -> void:
 			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		else:
 			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+		if working == true: working = false
+		else: working = true
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -34,13 +36,13 @@ func _physics_process(delta: float) -> void:
 		velocity += get_gravity() * delta
 
 	# Handle jump.
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+	if Input.is_action_just_pressed("ui_accept") and is_on_floor() and working == true:
 		velocity.y = JUMP_VELOCITY
 
 	# Get the input direction and handle the movement/deceleration.
 	var input_dir := Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-	if direction:
+	if direction and working==true:
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
 	else:

@@ -5,6 +5,8 @@ const SIZE = 16
 
 @onready var camera: Camera3D = get_viewport().get_camera_3d()
 
+var working: bool = true
+
 var total_shades: int = 11
 
 func _ready() -> void:
@@ -18,15 +20,13 @@ func _ready() -> void:
 				set_cell_item(Vector3i(x, y, z), random_shade)
 
 func _unhandled_input(event: InputEvent) -> void:
-	if event is InputEventMouseButton and event.pressed:
-		if event.button_index == MOUSE_BUTTON_LEFT:
-			_sculpt(false) # Destroy block
-		elif event.button_index == MOUSE_BUTTON_RIGHT:
-			_sculpt(true)  # Place block
-	if event.is_action_pressed("break_block"):
+	if event.is_action_pressed("break_block") and working==true:
 		_sculpt(false) # Destroy block
-	elif event.is_action_pressed("place_block"):
+	elif event.is_action_pressed("place_block") and working==true:
 		_sculpt(true)  # Place block
+	elif event.is_action_pressed("ui_cancel"):
+		if working == true: working=false
+		else: working=true
 
 func _sculpt(is_placing: bool) -> void:
 	var space_state = get_world_3d().direct_space_state
