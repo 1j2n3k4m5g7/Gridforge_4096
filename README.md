@@ -15,6 +15,12 @@ WSAD:
 * LMB - destroy
 * RMB - place
 
+## FPS Limiter:
+* F - next preset (default FPS: VSync)
+* Presets: VSync, 15, 30, 45, 60, 75
+* VSync caps your maximum frame rate to match your monitor's refresh rate. This eliminates screen tearing and saves CPU/GPU
+resources by cutting out excess frames.
+
 ---
 
 RMB - Right Mouse Button

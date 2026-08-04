@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://danp2ygm14yb3"]
 
 [ext_resource type="Script" uid="uid://1m0cho1ik37r" path="res://scripts/player.gd" id="1_f3sb7"]
+[ext_resource type="Script" uid="uid://bjed5munvvq7u" path="res://scripts/world.gd" id="1_gbfbk"]
 [ext_resource type="MeshLibrary" uid="uid://h26aa4fjchxo" path="res://customTextures/blocks.tres" id="2_tlwt5"]
 [ext_resource type="Script" uid="uid://b24r3guholqt6" path="res://scripts/grid_map.gd" id="3_aqk2v"]
 [ext_resource type="Script" uid="uid://ncja6aku616l" path="res://scripts/fps_disp.gd" id="4_aqk2v"]
@@ -24,6 +25,7 @@ background_mode = 2
 sky = ExtResource("7_pkg7o")
 
 [node name="World" type="Node3D" unique_id=135381070]
+script = ExtResource("1_gbfbk")
 
 [node name="player" type="CharacterBody3D" parent="." unique_id=741675535]
 transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 9.469121, -0.17607021, 0)
