@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://danp2ygm14yb3"]
 
-[ext_resource type="Script" uid="uid://1m0cho1ik37r" path="res://player.gd" id="1_f3sb7"]
+[ext_resource type="Script" uid="uid://1m0cho1ik37r" path="res://scripts/player.gd" id="1_f3sb7"]
 [ext_resource type="MeshLibrary" uid="uid://h26aa4fjchxo" path="res://customTextures/blocks.tres" id="2_tlwt5"]
-[ext_resource type="Script" uid="uid://b24r3guholqt6" path="res://grid_map.gd" id="3_aqk2v"]
-[ext_resource type="Script" uid="uid://ncja6aku616l" path="res://fps_disp.gd" id="4_aqk2v"]
+[ext_resource type="Script" uid="uid://b24r3guholqt6" path="res://scripts/grid_map.gd" id="3_aqk2v"]
+[ext_resource type="Script" uid="uid://ncja6aku616l" path="res://scripts/fps_disp.gd" id="4_aqk2v"]
 [ext_resource type="Texture2D" uid="uid://b4hl5nau8qpc2" path="res://customTextures/crosshair1.png" id="5_036b0"]
-[ext_resource type="Script" uid="uid://fe4xxp5pq74h" path="res://touch_ui.gd" id="6_dwbse"]
+[ext_resource type="Script" uid="uid://fe4xxp5pq74h" path="res://scripts/touch_ui.gd" id="6_dwbse"]
 [ext_resource type="Sky" uid="uid://n7eb383nrotl" path="res://customTextures/sky1.tres" id="7_pkg7o"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_6654v"]
@@ -34,7 +34,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2638109, 0)
 shape = SubResource("CapsuleShape3D_6654v")
 
 [node name="Head" type="Node3D" parent="player" unique_id=74813978]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7992179, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9766086, 0)
 
 [node name="Camera3D" type="Camera3D" parent="player/Head" unique_id=2083185348]
 
